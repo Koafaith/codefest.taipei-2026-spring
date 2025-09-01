@@ -1,3 +1,4 @@
+ts
 import { defineNuxtPlugin } from '#app';
 
 interface KbFocusData {
@@ -35,16 +36,22 @@ function focusElement(id: string | null) {
   currentId = id;
 }
 
-// moveFocus：Index 頁邏輯
-function moveFocusIndex(dir: 'up' | 'down' | 'left' | 'right') {
+// 共用的起始檢查邏輯
+function attemptInitialFocus(): boolean {
   if (!currentId && !hasFocused && registry.size > 0) {
     const firstEntry = registry.values().next().value;
     if (firstEntry) {
       focusElement(firstEntry.id);
       hasFocused = true;
-      return;
+      return true;
     }
   }
+  return false;
+}
+
+// moveFocus：Index 頁邏輯
+function moveFocusIndex(dir: 'up' | 'down' | 'left' | 'right') {
+  if (attemptInitialFocus()) return;
 
   if (!currentId) return;
   const current = registry.get(currentId);
@@ -88,14 +95,7 @@ function moveFocusIndex(dir: 'up' | 'down' | 'left' | 'right') {
 
 // moveFocus：Rules 頁邏輯（優先同軸）
 function moveFocusRules(dir: 'up' | 'down' | 'left' | 'right') {
-  if (!currentId && !hasFocused && registry.size > 0) {
-    const firstEntry = registry.values().next().value;
-    if (firstEntry) {
-      focusElement(firstEntry.id);
-      hasFocused = true;
-      return;
-    }
-  }
+  if (attemptInitialFocus()) return;
 
   if (!currentId) return;
   const current = registry.get(currentId);
