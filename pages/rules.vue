@@ -41,12 +41,14 @@ const activeTab = computed(() => tabList.find(tab => tab.path === route.path) ||
 
 const tabItems = ref<HTMLElement[]>([]);
 
+const SCROLL_THRESHOLD_INDEX = 2;
+
 const scrollToTab = (index: number) => {
   const scrollContainer = document.querySelector('.scroll-container'); // 取得 `overflow-x-auto` 的 div
 
   if (scrollContainer) {
     const scrollLeft =
-      index >= 2
+      index >= SCROLL_THRESHOLD_INDEX
         ? scrollContainer.scrollWidth - scrollContainer.clientWidth // 滾動到底部
         : 0; // 回到最左
 
