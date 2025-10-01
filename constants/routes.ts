@@ -1,4 +1,3 @@
-ts
 export const ROUTE_PATHS = {
   /** 競賽規則 */
   RULES: '/rules',
