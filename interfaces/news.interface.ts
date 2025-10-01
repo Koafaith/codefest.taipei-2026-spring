@@ -1,3 +1,4 @@
+```typescript
 export interface News {
   id: number;
   /** 發布日期 */
@@ -9,10 +10,16 @@ export interface News {
   /** 是否可用 */
   available: boolean;
   /** 標籤 */
-  tag: 'news' | 'media';
+  tag: NewsTag;
   /**
    * 內文圖片
    * - 僅限一張，排在 content 前方
    */
   image_url?: string;
 }
+
+export enum NewsTag {
+  News = 'news',
+  Media = 'media',
+}
+```
