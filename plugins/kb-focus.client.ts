@@ -1,4 +1,3 @@
-ts
 import { defineNuxtPlugin } from '#app';
 
 interface KbFocusData {
