@@ -80,8 +80,8 @@ const videoList = computed<PastVideo[]>(() => {
                   >
                     <div :key="group.id">
                       <a
-                        href="javascript:void(0)"
-                        @click="
+                        href="#"
+                        @click.prevent="
                           activeWinningTeam = group;
                           dialogStore.openDialog('winningTeam');
                         "
@@ -173,8 +173,8 @@ const videoList = computed<PastVideo[]>(() => {
                   >
                     <div :key="group.id">
                       <a
-                        href="javascript:void(0)"
-                        @click="
+                        href="#"
+                        @click.prevent="
                           activePhoto = group;
                           dialogStore.openDialog('photo');
                         "

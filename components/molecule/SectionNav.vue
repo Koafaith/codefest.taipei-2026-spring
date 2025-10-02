@@ -92,9 +92,9 @@ onMounted(() => {
             x: index + 1,
             y: focusY, // 傳進來或 props 傳入：目前是第幾個 section
           }"
-          href="javascript:void(0)"
+          href="#"
           class="mr-1 transition-all"
-          @click="scrollToSection(item.name)"
+          @click.prevent="scrollToSection(item.name)"
         >
           <img
             :src="item.icon_url"

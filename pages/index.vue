@@ -320,9 +320,9 @@ const newsKeyword = ref('');
                           x: index + 1,
                           y: 31,
                         }"
-                        href="javascript:void(0)"
+                        href="#"
                         class="m-1 inline-block"
-                        @click="
+                        @click.prevent="
                           activeWinningTeam = group;
                           dialogStore.openDialog('winningTeam');
                         "
@@ -361,8 +361,8 @@ const newsKeyword = ref('');
                   class="mb-8"
                 >
                   <a
-                    href="javascript:void(0)"
-                    @click="
+                    href="#"
+                    @click.prevent="
                       activeWinningTeam = group;
                       dialogStore.openDialog('winningTeam');
                     "
@@ -986,9 +986,9 @@ const newsKeyword = ref('');
                         x: 1,
                         y: 21 + index,
                       }"
-                      href="javascript:void(0)"
+                      href="#"
                       class="block border border-white p-4 transition hover:bg-primary-50 hover:text-primary-500 m-1"
-                      @click="
+                      @click.prevent="
                         activeNews = news;
                         dialogStore.openDialog('news');
                         showPopup(news);
