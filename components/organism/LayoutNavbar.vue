@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ROUTE_PATHS } from '~/constants/routes';
+import { NuxtLink } from '#components';
+import { useDialogStore } from '~/stores/dialogStore';
 
 const props = defineProps<{
   type: 'header' | 'mobile-header' | 'footer';
@@ -22,6 +24,19 @@ const navItemClass = computed(() => {
 
 // 計算 v-kb-focus 的 Y 座標，避免重複計算
 const kbFocusY = computed(() => (props.type === 'header' ? 1 : 202));
+
+// 計算組件標籤
+const getComponentTag = (item: NavItem) => {
+  return item.isExternal ? 'a' : NuxtLink;
+};
+
+// 計算組件屬性綁定
+const getComponentProps = (item: NavItem) => {
+  return {
+    ...(item.isExternal ? { href: item.path } : { to: item.path }),
+    ...(item.target ? { target: item.target } : {}),
+  };
+};
 
 // 定義導覽項目介面
 interface NavItem {
@@ -67,13 +82,14 @@ const navItems = computed<NavItem[]>(() => [
     <ul :class="navClass">
       <li v-for="(item, index) in navItems" :key="item.text" :class="navItemClass">
         <component
-          :is="item.isExternal ? 'a' : 'NuxtLink'"
+          :is="getComponentTag(item)"
           v-kb-focus="{
             id: `${type}-nav${index + 2}-${kbFocusY}`, // x 座標從 2 開始，id 也要對應
             x: index + 2, // 根據迴圈索引動態計算 x 座標
             y: kbFocusY,
           }"
-          :[item.isExternal ? 'href' : 'to']="item.path"
+          :href="item.isExternal ? item.path : undefined"
+          :to="item.isExternal ? undefined : item.path"
           :target="item.target"
           @click="dialogStore.closeDialog()"
         >
