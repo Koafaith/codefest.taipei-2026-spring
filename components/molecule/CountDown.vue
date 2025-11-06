@@ -25,8 +25,8 @@ const interval = ref<ReturnType<typeof setInterval> | null>(null);
 /**
  * 計算剩餘時間
  */
-const getTimeLeft = (date: Date): TimeLeft => {
-  const now = date.getTime();
+const getTimeLeft = (): TimeLeft => {
+  const now = new Date().getTime();
   const diff = targetTimestamp - now;
 
   if (diff <= 0) return { days: '00', hours: '00', minutes: '00', seconds: '00' };
@@ -48,11 +48,11 @@ const formatNumber = (num: number) => {
  * 儲存計算後的剩餘時間
  * 立即計算一次，確保組件掛載時就有初始值
  */
-const timeLeft = ref<TimeLeft>(getTimeLeft(new Date()));
+const timeLeft = ref<TimeLeft>(getTimeLeft());
 
 onMounted(() => {
   interval.value = setInterval(() => {
-    timeLeft.value = getTimeLeft(new Date());
+    timeLeft.value = getTimeLeft();
   }, 1000);
 });
 
