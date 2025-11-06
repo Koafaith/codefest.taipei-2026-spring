@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useDialogStore } from '~/stores/dialogStore';
+import { DIALOG_NAMES } from '~/constants/dialogs';
 
 const dialogStore = useDialogStore();
 const { activeDialog } = storeToRefs(dialogStore);
@@ -28,14 +29,14 @@ const { activeDialog } = storeToRefs(dialogStore);
         <button
           type="button"
           class="lg:hidden z-30 px-4 py-2"
-          @click="dialogStore.openDialog('mobileMenu')"
+          @click="dialogStore.openDialog(DIALOG_NAMES.MOBILE_MENU)"
         >
           <img src="@/assets/images/icons/menu.png" width="24" alt="" />
         </button>
       </div>
       <!-- moblie nav modal -->
       <Transition name="fade">
-        <div v-if="activeDialog === 'mobileMenu'" class="modal-open">
+        <div v-if="activeDialog === DIALOG_NAMES.MOBILE_MENU" class="modal-open">
           <div
             class="fixed top-0 bottom-0 left-0 right-0 z-50 w-full overflow-y-auto bg-black bg-opacity-80 flex flex-col p-4 transition-all duration-500"
           >
