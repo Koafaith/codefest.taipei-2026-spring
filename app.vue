@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useDialogStore } from '~/stores/dialogStore';
+import { DIALOG_NAMES } from '~/constants/dialogs';
 
 const dialogStore = useDialogStore();
 const { activeDialog } = storeToRefs(dialogStore);
@@ -58,5 +59,8 @@ onUnmounted(() => {
   <OrganismLayoutFooter id="footer" :class="isAboveFooter ? 'mt-4' : 'mt-[162px]'" />
 
   <!-- 報名表單 -->
-  <OrganismApplyDialog :is-open="activeDialog === 'apply'" @close="dialogStore.closeDialog()" />
+  <OrganismApplyDialog
+    :is-open="activeDialog === DIALOG_NAMES.APPLY"
+    @close="dialogStore.closeDialog()"
+  />
 </template>

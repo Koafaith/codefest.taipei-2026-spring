@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import type { PastPhoto, PastVideo, PastWinningTeam } from '~/interfaces/past.interface';
+import { DIALOG_NAMES } from '~/constants/dialogs';
 
 const { tm } = useI18n();
 const dialogStore = useDialogStore();
@@ -83,7 +84,7 @@ const videoList = computed<PastVideo[]>(() => {
                         href="#"
                         @click.prevent="
                           activeWinningTeam = group;
-                          dialogStore.openDialog('winningTeam');
+                          dialogStore.openDialog(DIALOG_NAMES.WINNING_TEAM);
                         "
                       >
                         <div class="video-box relative">
@@ -176,7 +177,7 @@ const videoList = computed<PastVideo[]>(() => {
                         href="#"
                         @click.prevent="
                           activePhoto = group;
-                          dialogStore.openDialog('photo');
+                          dialogStore.openDialog(DIALOG_NAMES.PHOTO);
                         "
                       >
                         <div class="video-box relative">
@@ -337,7 +338,7 @@ const videoList = computed<PastVideo[]>(() => {
     </section>
 
     <OrganismWinningTeamDialog
-      :is-open="activeDialog === 'winningTeam'"
+      :is-open="activeDialog === DIALOG_NAMES.WINNING_TEAM"
       :active-winning-team="activeWinningTeam"
       @close="
         activeWinningTeam = null;
@@ -345,7 +346,7 @@ const videoList = computed<PastVideo[]>(() => {
       "
     />
     <OrganismPhotoDialog
-      :is-open="activeDialog === 'photo'"
+      :is-open="activeDialog === DIALOG_NAMES.PHOTO"
       :active-photo="activePhoto"
       @close="
         activePhoto = null;

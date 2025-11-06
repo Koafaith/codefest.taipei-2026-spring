@@ -1,8 +1,9 @@
 import { defineStore } from 'pinia';
 import { ref, watch } from 'vue';
+import type { DialogName } from '~/constants/dialogs';
 
 export const useDialogStore = defineStore('dialogStore', () => {
-  const activeDialog = ref<null | 'apply' | 'news' | 'mobileMenu' | 'winningTeam' | 'photo'>(null);
+  const activeDialog = ref<null | DialogName>(null);
 
   // 控制 body scroll
   watch(activeDialog, val => {
