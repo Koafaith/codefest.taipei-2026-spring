@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ROUTE_PATHS } from '~/constants/routes';
+import { DIALOG_NAMES } from '~/constants/dialogs'; // 新增：引入對話框名稱常數
 import { useDialogStore } from '~/stores/dialogStore';
 const { tm } = useI18n();
 
@@ -47,8 +48,8 @@ const isRegistrationClosed = computed(() => {
       :icon-type="isRegistrationClosed ? null : 'arrow'"
       :disabled="isRegistrationClosed"
       class="w-auto min-w-60 mx-auto btn-lg-span"
-      @click="dialogStore.openDialog('apply')"
-      @keydown.enter.prevent="dialogStore.openDialog('apply')"
+      @click="dialogStore.openDialog(DIALOG_NAMES.APPLY)" // 變更：使用常數
+      @keydown.enter.prevent="dialogStore.openDialog(DIALOG_NAMES.APPLY)" // 變更：使用常數
     >
       {{ isRegistrationClosed ? '報名截止' : '立即報名' }}
     </AtomButton> -->
