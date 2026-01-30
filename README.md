@@ -1,4 +1,4 @@
-# 2025雙北程式設計節
+# 2026雙北程式設計節
 
 > 這是一個基於 **Nuxt 3.16.0** 的前端專案，使用 Vue 3、Pinia、Tailwind CSS，並支援 i18n。
 
@@ -97,7 +97,7 @@ components 元件管理採用 [Atomic Design](https://bradfrost.com/blog/post/at
 
 | 參數 | 子參數 | 說明 | 範例 |
 |------|--------|------|------|
-| hero_banner | section_title | 首頁大標題文字 | "2025雙北程式設計節" |
+| hero_banner | section_title | 首頁大標題文字 | "2026雙北程式設計節" |
 | | content | 競賽資訊列表 | [{"label": "競賽日", "value": "5/31 Sat - 6/1 Sun"}, {"label": "競賽地點", "value": "新北市政府大樓"}] |
 | rules | available | 控制競賽規則區塊是否顯示 | true |
 | | section_title | 競賽規則區塊標題 | "競賽規則" |

@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        - 確認您的 issue 尚未有人[回報](https://github.com/taipei-doit/codefest.taipei-2025-spring/issues)。
+        - 確認您的 issue 尚未有人[回報](https://github.com/taipei-doit/codefest.taipei-2026-spring/issues)。
         - 確認該問題在最新版本中尚未修復。
   - type: textarea
     id: description
