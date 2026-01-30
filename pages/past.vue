@@ -112,6 +112,18 @@ const videoList = computed<PastVideo[]>(() => {
                     </div>
                   </div>
                 </div>
+                <!-- 無資料時 -->
+                <div v-if="winningTeamList.length === 0" class="flex-1 flex justify-center items-center">
+                  <div>
+                    <img
+                      src="@/assets/images/icons/white-coming-soon.svg"
+                      alt="no-data"
+                      width="60"
+                      class="m-auto"
+                    />
+                    <p class="text-white text-center font-px437 mt-8">Coming Soon......</p>
+                  </div>
+                </div>
               </div>
               <div
                 v-if="tm('past.winning_teams.more_winning_team_photos_url')"
@@ -202,6 +214,18 @@ const videoList = computed<PastVideo[]>(() => {
                         </div>
                       </a>
                     </div>
+                  </div>
+                </div>
+                <!-- 無資料時 -->
+                <div v-if="photoList.length === 0" class="flex-1 flex justify-center items-center">
+                  <div>
+                    <img
+                      src="@/assets/images/icons/white-coming-soon.svg"
+                      alt="no-data"
+                      width="60"
+                      class="m-auto"
+                    />
+                    <p class="text-white text-center font-px437 mt-8">Coming Soon......</p>
                   </div>
                 </div>
               </div>
