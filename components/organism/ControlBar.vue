@@ -38,7 +38,7 @@ const isRegistrationClosed = computed(() => {
         </div>
       </div>
     </div>
-    <!-- <AtomButton
+    <AtomButton
       v-if="showApplyBtn"
       v-kb-focus="{
         id: `rules-apply-1-60`,
@@ -48,11 +48,11 @@ const isRegistrationClosed = computed(() => {
       :icon-type="isRegistrationClosed ? null : 'arrow'"
       :disabled="isRegistrationClosed"
       class="w-auto min-w-60 mx-auto btn-lg-span"
-      @click="dialogStore.openDialog(DIALOG_NAMES.APPLY)" // 變更：使用常數
-      @keydown.enter.prevent="dialogStore.openDialog(DIALOG_NAMES.APPLY)" // 變更：使用常數
+      @click="dialogStore.openDialog(DIALOG_NAMES.APPLY)"
+      @keydown.enter.prevent="dialogStore.openDialog(DIALOG_NAMES.APPLY)"
     >
       {{ isRegistrationClosed ? '報名截止' : '立即報名' }}
-    </AtomButton> -->
+    </AtomButton>
   </div>
 </template>
 
