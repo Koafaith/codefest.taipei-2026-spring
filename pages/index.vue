@@ -499,7 +499,7 @@ const newsKeyword = ref('');
                   />
                   <!-- desktop image -->
                   <img
-                    src="@/assets/images/img-rules.jpg"
+                    src="@/assets/images/img-rules.png"
                     class="absolute top-[12%] left-[12%] right-0 lg:block hidden"
                     :style="{ width: 'calc(100% - 12%)' }"
                     alt="程式儀表板大黑客松宣傳圖"
@@ -512,7 +512,7 @@ const newsKeyword = ref('');
                   />
                   <!-- mobile image -->
                   <img
-                    src="@/assets/images/img-rules-mobile.jpg"
+                    src="@/assets/images/img-rules-mobile.png"
                     class="absolute top-[10%] left-[16%] lg:hidden block"
                     :style="{ width: 'calc(100% - 16%)' }"
                     alt="程式儀表板大黑客松宣傳圖"
@@ -1184,7 +1184,7 @@ const newsKeyword = ref('');
 .bg-tp {
   @apply relative;
   &::before {
-    content: url('@/assets/images/hero-banner-tpe.svg');
+    content: url('@/assets/images/大網-左_427x360.png');
     background-repeat: no-repeat;
     position: absolute;
     left: 0;
@@ -1192,7 +1192,7 @@ const newsKeyword = ref('');
   }
 
   &::after {
-    content: url('@/assets/images/hero-banner-ntpc.svg');
+    content: url('@/assets/images/大網-右_438x360.png');
     background-repeat: no-repeat;
     position: absolute;
     right: 0;
@@ -1206,7 +1206,7 @@ const newsKeyword = ref('');
   }
 
   .bg-tp {
-    background-image: url('@/assets/images/hero-banner-tp.svg');
+    background-image: url('@/assets/images/小網-banner.png');
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: contain;

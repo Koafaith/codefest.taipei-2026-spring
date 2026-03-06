@@ -40,7 +40,8 @@ const contactBtns = computed(() => {
               <p v-if="tm('contact.address_ntpc')">{{ tm('contact.address_ntpc') }}</p>
               <p v-if="tm('contact.address_tpe')">{{ tm('contact.address_tpe') }}</p>
               <p v-if="tm('contact.line_id')">LINE {{ tm('contact.line_id') }}</p>
-              <p v-if="tm('contact.email')">EMAIL {{ tm('contact.email') }}</p>
+              <p v-if="tm('contact.email')">官方Email：{{ tm('contact.email') }}</p>
+              <p v-if="tm('contact.phone')">服務電話：{{ tm('contact.phone') }}</p>
               <p v-if="tm('contact.office_hours')">服務時間：{{ tm('contact.office_hours') }}</p>
             </div>
           </div>

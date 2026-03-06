@@ -17,7 +17,7 @@
         "section_title": "競賽規則",
         "description": "\"The power of open source is the power of the people.\"\n— Philippe Kahn\n（開源的力量就是人民的力量）",
         "content_title": "概念",
-        "content": "在智慧城市與數據驅動時代，創新技術成為推動城市發展與提升市政服務的關鍵。2025這一屆獨特的雙北黑客松將帶領我們探索如何運用開源技術與數據可視化，挑戰傳統思維，實現跨縣市合作，共同創造出更具競爭力的智慧解決方案。\n透過結合創新設計與先進技術，我們期望進一步優化市政服務，推動雙北邁向智慧城市的未來。如有任何疑問，歡迎隨時聯絡我們！\n心動了嗎？ 趕快報名！",
+        "content": "在智慧城市與數據驅動時代，創新技術成為推動城市發展與提升市政服務的關鍵。2026這一屆獨特的雙北黑客松將帶領我們探索如何運用開源技術與數據可視化，挑戰傳統思維，實現跨縣市合作，共同創造出更具競爭力的智慧解決方案。\n透過結合創新設計與先進技術，我們期望進一步優化市政服務，推動雙北邁向智慧城市的未來。如有任何疑問，歡迎隨時聯絡我們！\n心動了嗎？ 趕快報名！",
         "buttons": [],
         "judges": {
             "available": false,
@@ -150,7 +150,7 @@
                     "sub_content": "註1：前端技術能力package.json套件詳細說明 <a href='https://github.com/taipei-doit/Taipei-City-Dashboard/tree/develop/Taipei-City-Dashboard-FE' target='_blank' rel='noopener noreferrer' style='text-decoration: underline; color: #58FEFF;'>https://github.com/taipei-doit/Taipei-City-Dashboard/tree/develop/Taipei-City-Dashboard-FE</a>\n註2：後端技術能力go.mod套件詳細說明 <a href='https://github.com/taipei-doit/Taipei-City-Dashboard/tree/develop/Taipei-City-Dashboard-BE' target='_blank' rel='noopener noreferrer' style='text-decoration: underline; color: #58FEFF;'>https://github.com/taipei-doit/Taipei-City-Dashboard/tree/develop/Taipei-City-Dashboard-BE</a>"
                 }
             ],
-            "download_url": ""
+            "download_url": "https://o365scepccu-my.sharepoint.com/:b:/g/personal/dii_sce_pccu_edu_tw/IQCljfbu0FfVRqmgOQVQhE9RAeLULh4UAQF4sOgCR36Ab30?e=bgyab0"
         }
     },
     "schedule": {
@@ -613,8 +613,8 @@
         "address_tpe": "110204 臺北市信義區市府路1號",
         "line_id": "",
         "office_hours": "週一至週五 09:00-17:00",
-        "email": "",
-        "phone": "",
+        "email": "CodeFestTaipei@gov.taipei",
+        "phone": "02-77097801#7584",
         "buttons": [
             {
                 "name": "Github",
@@ -639,6 +639,6 @@
             }
         ]
     },
-    "apply_url": "https://www.surveycake.com/s/mVlKa",
+    "apply_url": "https://www.surveycake.com/s/rpzx6",
     "past_url": "https://codefest.taipei/welcome"
 }
