@@ -268,7 +268,7 @@ const newsKeyword = ref('');
               {{ tm('hero_banner.section_title') }}
             </p>
             <img
-              src="@/assets/images/hero-banner-title.svg"
+              src="@/assets/images/hero-banner-title.png"
               class="mx-auto"
               alt="城市儀表板大黑客松"
             />
