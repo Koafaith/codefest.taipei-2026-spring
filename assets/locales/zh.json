@@ -149,7 +149,8 @@
                     "sub_title": "< 備註 >",
                     "sub_content": "註1：前端技術能力package.json套件詳細說明 <a href='https://github.com/taipei-doit/Taipei-City-Dashboard/tree/develop/Taipei-City-Dashboard-FE' target='_blank' rel='noopener noreferrer' style='text-decoration: underline; color: #58FEFF;'>https://github.com/taipei-doit/Taipei-City-Dashboard/tree/develop/Taipei-City-Dashboard-FE</a>\n註2：後端技術能力go.mod套件詳細說明 <a href='https://github.com/taipei-doit/Taipei-City-Dashboard/tree/develop/Taipei-City-Dashboard-BE' target='_blank' rel='noopener noreferrer' style='text-decoration: underline; color: #58FEFF;'>https://github.com/taipei-doit/Taipei-City-Dashboard/tree/develop/Taipei-City-Dashboard-BE</a>"
                 }
-            ]
+            ],
+            "download_url": ""
         }
     },
     "schedule": {
