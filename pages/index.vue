@@ -132,9 +132,27 @@ const sponsorList = computed<Sponsor[]>(() => {
 });
 
 const duplicatedSponsorList = computed(() => {
-  // 重複 4 次內容以確保無縫循環
+  // 重複 2 次內容以確保無縫循環（動畫移動 -50% 剛好一份距離）
   const originalList = sponsorList.value;
-  return [...originalList, ...originalList, ...originalList, ...originalList];
+  return [...originalList, ...originalList];
+});
+
+// 每張圖固定 8 秒，圖片數量等比縮放，確保速度一致
+const marqueeAnimationDuration = computed(() => `${8 * sponsorList.value.length}s`);
+
+// 取容器實際寬度作為每個 item 的 min-width，確保一次只顯示一張
+const sponsorContainerRef = ref<HTMLElement | null>(null);
+const sponsorItemMinWidth = ref('100vw');
+
+onMounted(() => {
+  const updateWidth = () => {
+    if (sponsorContainerRef.value) {
+      sponsorItemMinWidth.value = `${sponsorContainerRef.value.offsetWidth}px`;
+    }
+  };
+  updateWidth();
+  window.addEventListener('resize', updateWidth);
+  onUnmounted(() => window.removeEventListener('resize', updateWidth));
 });
 
 // 存放距離
@@ -1058,16 +1076,16 @@ const newsKeyword = ref('');
             <p class="section-title font-fusion-pixel">{{ tm('sponsor').section_title }}</p>
             <div class="p-10 border border-b-white">
               <!-- 輪播效果 -->
-              <div class="relative w-full overflow-hidden">
+              <div ref="sponsorContainerRef" class="relative w-full overflow-hidden">
                 <!-- Desktop 輪播 -->
                 <div class="hidden lg:block">
                   <div class="marquee-container">
-                    <div class="marquee-content marquee-left flex">
+                    <div class="marquee-content marquee-left flex" :style="{ animationDuration: marqueeAnimationDuration }">
                       <!-- 重複多次內容以實現無縫循環 -->
                       <div
                         v-for="(sponsor, index) in duplicatedSponsorList"
                         :key="`desktop-${sponsor.id}-${index}`"
-                        class="sponsor-item flex-shrink-0 mr-10 flex items-center justify-center"
+                        class="sponsor-item flex-shrink-0 mr-10 flex items-center justify-center" :style="{ minWidth: sponsorItemMinWidth }"
                       >
                         <div class="group block">
                           <img
@@ -1085,12 +1103,12 @@ const newsKeyword = ref('');
                 <div class="lg:hidden block">
                   <!-- 第一排：往右移動 -->
                   <div class="marquee-container mb-4">
-                    <div class="marquee-content marquee-right flex">
+                    <div class="marquee-content marquee-right flex" :style="{ animationDuration: marqueeAnimationDuration }">
                       <!-- 重複多次內容以實現無縫循環 -->
                       <div
                         v-for="(sponsor, index) in duplicatedSponsorList"
                         :key="`mobile-right-${sponsor.id}-${index}`"
-                        class="sponsor-item flex-shrink-0 mr-10 flex items-center justify-center"
+                        class="sponsor-item flex-shrink-0 mr-10 flex items-center justify-center" :style="{ minWidth: sponsorItemMinWidth }"
                       >
                         <div class="group block">
                           <img
@@ -1105,12 +1123,12 @@ const newsKeyword = ref('');
 
                   <!-- 第二排：往左移動 -->
                   <div class="marquee-container">
-                    <div class="marquee-content marquee-left flex">
+                    <div class="marquee-content marquee-left flex" :style="{ animationDuration: marqueeAnimationDuration }">
                       <!-- 重複多次內容以實現無縫循環 -->
                       <div
                         v-for="(sponsor, index) in duplicatedSponsorList"
                         :key="`mobile-left-${sponsor.id}-${index}`"
-                        class="sponsor-item flex-shrink-0 mr-10 flex items-center justify-center"
+                        class="sponsor-item flex-shrink-0 mr-10 flex items-center justify-center" :style="{ minWidth: sponsorItemMinWidth }"
                       >
                         <div class="group block">
                           <img
@@ -1289,7 +1307,7 @@ const newsKeyword = ref('');
   position: relative;
 
   @media (max-width: 1024px) {
-    height: 80px; /* Mobile 單排高度，因為有兩排 */
+    height: auto; /* Mobile 高度自適應圖片 */
   }
 
   .marquee-content {
@@ -1301,6 +1319,10 @@ const newsKeyword = ref('');
       max-width: none; /* 移除寬度限制 */
       height: 100%; /* 讓圖片填滿容器高度 */
       object-fit: contain; /* 保持比例 */
+
+      @media (max-width: 1024px) {
+        height: auto; /* Mobile 改用 Tailwind class 的固定高度 */
+      }
     }
   }
 
