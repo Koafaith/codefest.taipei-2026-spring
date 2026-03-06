@@ -34,6 +34,11 @@
     font-family: "Px437_IGS_VGA_8x16", sans-serif;
 }
 
+html {
+    scroll-padding-top: 110px;
+    scroll-padding-bottom: 130px;
+}
+
 body {
     background-color: theme("colors.primary.500");
 }

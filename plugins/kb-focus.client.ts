@@ -8,19 +8,23 @@ interface KbFocusData {
 
 let currentId: string | null = null;
 let hasFocused = false;
+let isKeyboardNav = false;
 const registry: Map<string, { el: HTMLElement; id: string; x: number; y: number }> = new Map();
 
-// 聚焦元素，套用樣式
-function focusElement(id: string | null) {
+// 聚焦元素，套用樣式（僅鍵盤導航時才 scrollIntoView）
+function focusElement(id: string | null, shouldScroll = false) {
   if (!id || !registry.has(id)) return;
   const { el } = registry.get(id)!;
 
-  el.focus();
-  el.scrollIntoView({
-    behavior: 'smooth',
-    block: 'center',
-    inline: 'nearest',
-  });
+  el.focus({ preventScroll: !shouldScroll });
+  if (shouldScroll) {
+    el.style.scrollMarginBottom = '200px';
+    el.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'nearest',
+    });
+  }
 
   registry.forEach(({ el }) => {
     el.classList.remove('is-focused', 'is-focused-border');
@@ -35,12 +39,12 @@ function focusElement(id: string | null) {
   currentId = id;
 }
 
-// 共用的起始檢查邏輯
+// 共用的起始檢查邏輯（鍵盤觸發，需捲動）
 function attemptInitialFocus(): boolean {
   if (!currentId && !hasFocused && registry.size > 0) {
     const firstEntry = registry.values().next().value;
     if (firstEntry) {
-      focusElement(firstEntry.id);
+      focusElement(firstEntry.id, true);
       hasFocused = true;
       return true;
     }
@@ -89,7 +93,7 @@ function moveFocusIndex(dir: 'up' | 'down' | 'left' | 'right') {
     candidates.sort((a, b) => Math.abs(a.entry.x - current.x) - Math.abs(b.entry.x - current.x));
   }
 
-  focusElement(candidates[0]?.id);
+  focusElement(candidates[0]?.id, true);
 }
 
 // moveFocus：Rules 頁邏輯（優先同軸）
@@ -142,7 +146,7 @@ function moveFocusRules(dir: 'up' | 'down' | 'left' | 'right') {
     }
   });
 
-  focusElement(candidates[0]?.id);
+  focusElement(candidates[0]?.id, true);
 }
 
 // 初始預設 moveFocus
@@ -161,7 +165,8 @@ function setupKbFocus(el: HTMLElement, value: KbFocusData) {
     registry.set(id, { el, id, x, y });
 
     el.addEventListener('focus', () => {
-      focusElement(id);
+      focusElement(id, isKeyboardNav);
+      isKeyboardNav = false;
     });
   });
 }
@@ -188,18 +193,22 @@ export default defineNuxtPlugin(nuxtApp => {
     switch (e.key) {
       case 'ArrowUp':
         e.preventDefault();
+        isKeyboardNav = true;
         moveFocus('up');
         break;
       case 'ArrowDown':
         e.preventDefault();
+        isKeyboardNav = true;
         moveFocus('down');
         break;
       case 'ArrowLeft':
         e.preventDefault();
+        isKeyboardNav = true;
         moveFocus('left');
         break;
       case 'ArrowRight':
         e.preventDefault();
+        isKeyboardNav = true;
         moveFocus('right');
         break;
       case 'Enter':
