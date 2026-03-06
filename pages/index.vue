@@ -277,7 +277,7 @@ const newsKeyword = ref('');
               <br />
               大黑客松
             </p> -->
-            <!-- <p
+            <p
               v-for="item in bannerContentList"
               :key="item.label"
               class="lg:flex items-center font-fusion-pixel"
@@ -286,8 +286,8 @@ const newsKeyword = ref('');
                 item.label
               }}</span>
               <span class="lg:text-4xl text-2xl lg:inline block">{{ item.value }}</span>
-            </p> -->
-            <!-- <div class="flex justify-center">
+            </p>
+            <div class="flex justify-center">
               <AtomButton
                 v-kb-focus="{ id: 'index-button-1-2', x: 1, y: 2 }"
                 class="min-w-60"
@@ -298,7 +298,7 @@ const newsKeyword = ref('');
               >
                 {{ isRegistrationClosed ? '報名截止' : '立即報名' }}
               </AtomButton>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
