@@ -39,7 +39,7 @@ const contactBtns = computed(() => {
             <div class="mt-auto">
               <p v-if="tm('contact.address_ntpc')">{{ tm('contact.address_ntpc') }}</p>
               <p v-if="tm('contact.address_tpe')">{{ tm('contact.address_tpe') }}</p>
-              <p v-if="tm('contact.line_id')">LINE {{ tm('contact.line_id') }}</p>
+              <p v-if="tm('contact.line_id')">官方LINE：<a :href="'https://' + tm('contact.line_id')" target="_blank" rel="noopener noreferrer" class="underline">{{ tm('contact.line_id') }}</a></p>
               <p v-if="tm('contact.email')">官方Email：{{ tm('contact.email') }}</p>
               <p v-if="tm('contact.phone')">服務電話：{{ tm('contact.phone') }}</p>
               <p v-if="tm('contact.office_hours')">服務時間：{{ tm('contact.office_hours') }}</p>
