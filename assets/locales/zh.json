@@ -609,8 +609,8 @@
         ]
     },
     "footer": {
-        "organizer": ["臺北市政府資訊局"],
-        "co_organizer": ["新北市政府資訊中心"],
+        "organizer": ["臺北市政府資訊局", "新北市政府資訊中心"],
+        "co_organizer": ["台灣智慧雲端服務股份有限公司"],
         "implementer": []
     },
     "contact": {
