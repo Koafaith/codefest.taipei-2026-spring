@@ -285,7 +285,7 @@ const newsKeyword = ref('');
               <span class="lg:mr-4 lg:text-base text-sm lg:inline block lg:mb-0 mb-2">{{
                 item.label
               }}</span>
-              <span class="lg:text-4xl text-2xl lg:inline block">{{ item.value }}</span>
+              <span class="lg:text-3xl text-2xl lg:inline block">{{ item.value }}</span>
             </p>
             <div class="flex justify-center">
               <AtomButton
@@ -1101,27 +1101,6 @@ const newsKeyword = ref('');
 
                 <!-- Mobile 輪播 -->
                 <div class="lg:hidden block">
-                  <!-- 第一排：往右移動 -->
-                  <div class="marquee-container mb-4">
-                    <div class="marquee-content marquee-right flex" :style="{ animationDuration: marqueeAnimationDuration }">
-                      <!-- 重複多次內容以實現無縫循環 -->
-                      <div
-                        v-for="(sponsor, index) in duplicatedSponsorList"
-                        :key="`mobile-right-${sponsor.id}-${index}`"
-                        class="sponsor-item flex-shrink-0 mr-10 flex items-center justify-center" :style="{ minWidth: sponsorItemMinWidth }"
-                      >
-                        <div class="group block">
-                          <img
-                            :src="runtimeConfig.app.baseURL + sponsor.image_url"
-                            alt="sponsor"
-                            class="w-auto h-[60px] object-contain"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- 第二排：往左移動 -->
                   <div class="marquee-container">
                     <div class="marquee-content marquee-left flex" :style="{ animationDuration: marqueeAnimationDuration }">
                       <!-- 重複多次內容以實現無縫循環 -->

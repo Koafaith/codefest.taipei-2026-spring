@@ -4,7 +4,7 @@
         "content": [
             {
                 "label": "競賽日",
-                "value": "5/2 Sat - 5/3 Sun"
+                "value": "05/02 SAT - 05/03 SUN"
             },
             {
                 "label": "競賽地點",
@@ -161,7 +161,7 @@
         "list": [
             {
                 "id": "online",
-                "schedule_name": "線上說明會 03.13",
+                "schedule_name": "線上說明會 03/13",
                 "schedule_sub_name": "2026年03月13日 星期五",
                 "button": {
                     "text": "",
@@ -209,7 +209,7 @@
             },
             {
                 "id": "workshop",
-                "schedule_name": "工作坊 04.11",
+                "schedule_name": "工作坊 04/11",
                 "schedule_sub_name": "2026年04月11日 星期六",
                 "button": {
                     "text": "",
@@ -257,7 +257,7 @@
             },
             {
                 "id": "competition",
-                "schedule_name": "競賽日 05.02 - 05.03",
+                "schedule_name": "競賽日 05/02 - 05/03",
                 "schedule_sub_name": "2026年05月02日 星期六 ~ 2026年05月03日 星期日\n新北市政府大樓（新北市板橋區中山路一段 161 號）",
                 "button": {
                     "text": "",
@@ -277,7 +277,7 @@
                 ],
                 "schedule": [
                     {
-                        "col1": "05.02(六)",
+                        "col1": "05/02(六)",
                         "col2": "09:00-09:30",
                         "col3": "報到(詳Email)"
                     },
@@ -292,7 +292,7 @@
                         "col3": "Hacking及Coding診療室"
                     },
                     {
-                        "col1": "05.03(日)",
+                        "col1": "05/03(日)",
                         "col2": "00:00-11:00",
                         "col3": "Hacking及Coding診療室"
                     },
@@ -607,6 +607,11 @@
                 ]
             }
         ]
+    },
+    "footer": {
+        "organizer": ["臺北市政府資訊局"],
+        "co_organizer": ["新北市政府資訊中心"],
+        "implementer": []
     },
     "contact": {
         "address_ntpc": "220242 新北市板橋區中山路一段161號",

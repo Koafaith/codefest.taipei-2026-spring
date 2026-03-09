@@ -6,6 +6,21 @@ const contactBtns = computed(() => {
   const data = tm('contact.buttons');
   return Array.isArray(data) ? data : Object.values(data); // 轉換 Object 為 Array
 });
+
+const organizer = computed(() => {
+  const data = tm('footer.organizer');
+  return Array.isArray(data) ? data : [];
+});
+
+const coOrganizer = computed(() => {
+  const data = tm('footer.co_organizer');
+  return Array.isArray(data) ? data : [];
+});
+
+const implementer = computed(() => {
+  const data = tm('footer.implementer');
+  return Array.isArray(data) ? data : [];
+});
 </script>
 
 <template>
@@ -18,8 +33,46 @@ const contactBtns = computed(() => {
               <span class="col-span-2 lg:col-span-1 text-center lg:text-left mb-4"
                 >主辦單位<span class="lg:inline hidden">：</span></span
               >
-              <span class="text-center lg:text-left lg:mb-4">新北市政府資訊中心</span>
-              <span class="text-center lg:text-left lg:mb-4">臺北市政府資訊局</span>
+              <span
+                v-for="(item, index) in organizer"
+                :key="'org-' + index"
+                class="text-center lg:text-left lg:mb-4"
+                :class="organizer.length > 1 ? '' : 'col-span-2 lg:col-span-1'"
+              >
+                {{ item }}
+              </span>
+            </div>
+            <div
+              v-if="coOrganizer.length > 0"
+              class="grid lg:grid-cols-1 grid-cols-2 gap-x-4 mt-4"
+            >
+              <span class="col-span-2 lg:col-span-1 text-center lg:text-left mb-4"
+                >協辦單位<span class="lg:inline hidden">：</span></span
+              >
+              <span
+                v-for="(item, index) in coOrganizer"
+                :key="'co-' + index"
+                class="text-center lg:text-left lg:mb-4"
+                :class="coOrganizer.length > 1 ? '' : 'col-span-2 lg:col-span-1'"
+              >
+                {{ item }}
+              </span>
+            </div>
+            <div
+              v-if="implementer.length > 0"
+              class="grid lg:grid-cols-1 grid-cols-2 gap-x-4 mt-4"
+            >
+              <span class="col-span-2 lg:col-span-1 text-center lg:text-left mb-4"
+                >執行單位<span class="lg:inline hidden">：</span></span
+              >
+              <span
+                v-for="(item, index) in implementer"
+                :key="'impl-' + index"
+                class="text-center lg:text-left lg:mb-4"
+                :class="implementer.length > 1 ? '' : 'col-span-2 lg:col-span-1'"
+              >
+                {{ item }}
+              </span>
             </div>
             <div v-if="tm('policy').available" class="lg:block hidden mt-auto text-center">
               <a
@@ -39,7 +92,15 @@ const contactBtns = computed(() => {
             <div class="mt-auto">
               <p v-if="tm('contact.address_ntpc')">{{ tm('contact.address_ntpc') }}</p>
               <p v-if="tm('contact.address_tpe')">{{ tm('contact.address_tpe') }}</p>
-              <p v-if="tm('contact.line_id')">官方LINE：<a :href="'https://' + tm('contact.line_id')" target="_blank" rel="noopener noreferrer" class="underline">{{ tm('contact.line_id') }}</a></p>
+              <p v-if="tm('contact.line_id')">
+                官方LINE：<a
+                  :href="'https://' + tm('contact.line_id')"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="underline"
+                  >{{ tm('contact.line_id') }}</a
+                >
+              </p>
               <p v-if="tm('contact.email')">官方Email：{{ tm('contact.email') }}</p>
               <p v-if="tm('contact.phone')">服務電話：{{ tm('contact.phone') }}</p>
               <p v-if="tm('contact.office_hours')">服務時間：{{ tm('contact.office_hours') }}</p>
