@@ -27,7 +27,7 @@ const emit = defineEmits(['close']);
         <!-- 標題區域 -->
         <div class="pt-16 px-6">
           <div class="text-lg mb-2 flex items-center">
-            <span class="mr-2">{{ activeNews?.date }}</span>
+            <span class="mr-2">{{ activeNews?.date?.split(' ')[0] }}</span>
             <div
               class="text-sm bg-secondary-500 text-white px-2 py-1 shadow-md"
               :class="{ 'bg-primary-50 text-primary-500': activeNews?.tag === 'news' }"
