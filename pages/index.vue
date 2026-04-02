@@ -43,13 +43,32 @@ const scheduleList = computed(() => {
 const activeSchedule = ref(scheduleList.value[0]);
 
 /** 最新消息列表 */
+/** 解析最新消息的日期字串（支援 "2026.03.10" 或 "2026.04.03 09:00" 格式） */
+const parseNewsDate = (dateStr: string): Date => {
+  const [datePart, timePart] = dateStr.split(' ');
+  const [year, month, day] = datePart.split('.').map(Number);
+  if (timePart) {
+    const [hour, minute] = timePart.split(':').map(Number);
+    return new Date(year, month - 1, day, hour, minute);
+  }
+  return new Date(year, month - 1, day);
+};
+
+/** 取得日期顯示文字（僅日期部分，不含時分） */
+const getNewsDisplayDate = (dateStr: string): string => {
+  return dateStr.split(' ')[0];
+};
+
 const newsList = computed<News[]>(() => {
   const data = tm('news.list');
   return Array.isArray(data) ? data : Object.values(data); // 轉換 Object 為 Array
 });
 /** 目前顯示的最新消息 */
 const availableNews = computed(() => {
-  let filtered = newsList.value.filter((item: News) => item.available);
+  const now = new Date();
+  let filtered = newsList.value.filter(
+    (item: News) => item.available && parseNewsDate(item.date).getTime() <= now.getTime()
+  );
 
   // 關鍵字搜尋
   if (newsKeyword.value) {
@@ -76,14 +95,14 @@ const availableNews = computed(() => {
         break;
     }
     filtered = filtered.filter(
-      (item: News) => new Date(item.date).getTime() >= filterDate.getTime()
+      (item: News) => parseNewsDate(item.date).getTime() >= filterDate.getTime()
     );
   }
 
   // 排序
   filtered.sort((a: News, b: News) => {
-    const dateA = new Date(a.date).getTime();
-    const dateB = new Date(b.date).getTime();
+    const dateA = parseNewsDate(a.date).getTime();
+    const dateB = parseNewsDate(b.date).getTime();
     return newsSort.value === 'newest' ? dateB - dateA : dateA - dateB;
   });
 
@@ -1019,7 +1038,7 @@ const newsKeyword = ref('');
                       "
                     >
                       <div class="text-lg mb-2 flex items-center">
-                        <span class="mr-2">{{ news.date }}</span>
+                        <span class="mr-2">{{ getNewsDisplayDate(news.date) }}</span>
                         <div
                           class="text-sm bg-secondary-500 text-white px-2 py-1 shadow-md"
                           :class="{ 'bg-primary-50 text-primary-500': news.tag === 'news' }"
