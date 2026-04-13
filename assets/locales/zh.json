@@ -330,6 +330,15 @@
         "section_title": "最新消息",
         "list": [
             {
+                "id": 4,
+                "date": "2026.04.13",
+                "title": "📢 【2026雙北程式設計節－城市儀表板大黑客松】晉級名單揭曉！前進正式競賽🚀",
+                "image_url": "",
+                "content": "恭喜成功晉級競賽的團隊👏 以下為本次晉級名單<br><br>📌 晉級名單請見：<a href='https://scedux.com/u50q' target='_blank' rel='noopener noreferrer' style='text-decoration: underline; color: #0000EE;'>https://scedux.com/u50q</a><br><br>也再次感謝所有團隊的投入與參與，未入選的團隊也別氣餒，期待下次與您再次相見💪<br><br>期待在5/2、5/3正式競賽中看到大家更精彩的表現🔥<br>敬請期待！🚀<br><br>💬 請各入選團隊於競賽當天務必全員出席，並依規定時間完成報到。",
+                "available": true,
+                "tag": "news"
+            },
+            {
                 "id": 3,
                 "date": "2026.04.03 09:00",
                 "title": "📢 競賽工作坊入選團隊名單出爐！準備進入下一關🔥",
