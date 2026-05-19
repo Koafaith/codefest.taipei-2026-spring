@@ -20,7 +20,7 @@
         "content": "在智慧城市與數據驅動時代，創新技術成為推動城市發展與提升市政服務的關鍵。2026這一屆獨特的雙北黑客松將帶領我們探索如何運用開源技術與數據可視化，挑戰傳統思維，實現跨縣市合作，共同創造出更具競爭力的智慧解決方案。\n透過結合創新設計與先進技術，我們期望進一步優化市政服務，推動雙北邁向智慧城市的未來。如有任何疑問，歡迎隨時聯絡我們！\n心動了嗎？ 趕快報名！",
         "buttons": [],
         "judges": {
-            "available": false,
+            "available": true,
             "list": [
                 {
                     "name": "初選",
@@ -28,30 +28,30 @@
                         {
                             "id": 0,
                             "thumbnail": "images/judges/judge-1-1.jpg",
-                            "name": "李欣穎",
-                            "corporation": "開放文化基金會",
-                            "position": "執行長"
+                            "name": "吳政賢",
+                            "corporation": "白沙屯媽祖GPS APP",
+                            "position": "開發者"
                         },
                         {
                             "id": 1,
                             "thumbnail": "images/judges/judge-1-2.jpg",
-                            "name": "沈昇勳",
-                            "corporation": "悠遊卡股份有限公司",
-                            "position": "獨立董事"
+                            "name": "吳沛樺",
+                            "corporation": "儀表板開發團隊",
+                            "position": ""
                         },
                         {
                             "id": 2,
                             "thumbnail": "images/judges/judge-1-3.jpg",
-                            "name": "宋祥瑀​",
+                            "name": "蔡豪軒",
                             "corporation": "儀表板開發團隊",
                             "position": ""
                         },
                         {
                             "id": 3,
                             "thumbnail": "images/judges/judge-1-4.jpg",
-                            "name": "潘相輔",
-                            "corporation": "儀表板開發團隊",
-                            "position": ""
+                            "name": "黃一晉",
+                            "corporation": "SITCON 學生計算機年會",
+                            "position": "發起人"
                         }
                     ]
                 },
@@ -75,23 +75,16 @@
                         {
                             "id": 6,
                             "thumbnail": "images/judges/judge-2-3.jpg",
-                            "name": "高信雄",
-                            "corporation": "中央警察大學資訊管理學系",
-                            "position": "助理教授"
+                            "name": "黃敬群",
+                            "corporation": "國立成功大學資訊工程學系",
+                            "position": "教授"
                         },
                         {
                             "id": 7,
                             "thumbnail": "images/judges/judge-2-4.jpg",
-                            "name": "吳達偉",
-                            "corporation": "新竹市政府勞工及青年處",
-                            "position": "處長"
-                        },
-                        {
-                            "id": 8,
-                            "thumbnail": "images/judges/judge-2-5.jpg",
-                            "name": "林奕辰",
-                            "corporation": "洽吧智能股份有限公司",
-                            "position": "創辦人＆執行長"
+                            "name": "周秉輝",
+                            "corporation": "台灣智慧雲端服務股份有限公司",
+                            "position": "AI超算加速器計畫執行長"
                         }
                     ]
                 }
