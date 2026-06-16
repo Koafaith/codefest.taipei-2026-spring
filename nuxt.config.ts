@@ -64,6 +64,9 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n',
   ],
+  stylelint: {
+    lintOnStart: false,
+  },
   tailwindcss: {
     cssPath: '~/assets/main.scss', // 修正為字符串
     configPath: 'tailwind.config.js', // 確保這裡的文件名正確

@@ -153,7 +153,7 @@ watch(
                 <p class="text-2xl">{{ props.activeWinningTeam?.team_name }}</p>
               </DialogTitle>
               <p class="mb-4">團隊組成 |</p>
-              <p class="text-lg">{{ props.activeWinningTeam?.team_members }}</p>
+              <p class="text-lg whitespace-pre-line">{{ props.activeWinningTeam?.team_members }}</p>
             </div>
           </div>
           <hr class="my-8" />
