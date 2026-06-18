@@ -538,7 +538,77 @@
         "photos": {
             "title": "照片回顧",
             "more_photos_url": "",
-            "list": []
+            "list": [
+                {
+                    "id": 0,
+                    "title": "0411 工作坊",
+                    "thumbnail": "images/past-photos/0411工作坊/封面照.jpg",
+                    "more_photos_url": "https://drive.google.com/drive/folders/1NtJKMQn0fPm1Qgps9mA9wGrp4MM5MVTp",
+                    "image_list": [
+                        "images/past-photos/0411工作坊/封面照.jpg",
+                        "images/past-photos/0411工作坊/20260411工作坊@精選-7.jpg",
+                        "images/past-photos/0411工作坊/20260411工作坊@精選-14.jpg",
+                        "images/past-photos/0411工作坊/20260411工作坊@精選-22.jpg",
+                        "images/past-photos/0411工作坊/20260411工作坊@精選-46.jpg",
+                        "images/past-photos/0411工作坊/20260411工作坊@精選-50.jpg",
+                        "images/past-photos/0411工作坊/20260411工作坊@精選-77.jpg",
+                        "images/past-photos/0411工作坊/20260411工作坊@精選-113.jpg",
+                        "images/past-photos/0411工作坊/20260411工作坊@精選-116.jpg",
+                        "images/past-photos/0411工作坊/20260411工作坊@精選-123.jpg"
+                    ]
+                },
+                {
+                    "id": 1,
+                    "title": "0502 開幕式",
+                    "thumbnail": "images/past-photos/0502開幕式/封面照.jpg",
+                    "more_photos_url": "https://drive.google.com/drive/folders/1bbeob_5V81z4pOjMcsnz7dthTWAszsiN",
+                    "image_list": [
+                        "images/past-photos/0502開幕式/封面照.jpg",
+                        "images/past-photos/0502開幕式/260502黑客松@A 開幕儀式-120.jpg",
+                        "images/past-photos/0502開幕式/260502黑客松@A 合照-7.jpg",
+                        "images/past-photos/0502開幕式/260502黑客松@A 合照-8.jpg",
+                        "images/past-photos/0502開幕式/260502黑客松@A 合照-18.jpg",
+                        "images/past-photos/0502開幕式/260502黑客松@P 合照-006.jpg",
+                        "images/past-photos/0502開幕式/260502黑客松@P 合照-019.jpg",
+                        "images/past-photos/0502開幕式/260502黑客松@P 合照-026.jpg",
+                        "images/past-photos/0502開幕式/260503黑客松@A 合照-6.jpg"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "coding",
+                    "thumbnail": "images/past-photos/coding/封面照.jpg",
+                    "more_photos_url": "https://drive.google.com/drive/folders/1LCbPiEa4I8mvhL5X2t4FWnMGdDrzNIim",
+                    "image_list": [
+                        "images/past-photos/coding/封面照.jpg",
+                        "images/past-photos/coding/260502黑客松@A精選-97.jpg",
+                        "images/past-photos/coding/260502黑客松@A精選-107.jpg",
+                        "images/past-photos/coding/260502黑客松@A精選-134.jpg",
+                        "images/past-photos/coding/260502黑客松@A精選-138.jpg",
+                        "images/past-photos/coding/260502黑客松@A精選-186.jpg",
+                        "images/past-photos/coding/260502黑客松@P精選-90.jpg",
+                        "images/past-photos/coding/260502黑客松@P精選-106.jpg",
+                        "images/past-photos/coding/260502黑客松@P精選-120.jpg"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "title": "0503 閉幕式",
+                    "thumbnail": "images/past-photos/0503閉幕式/封面照.jpg",
+                    "more_photos_url": "https://drive.google.com/drive/folders/1BQOBFbp5W1PdeZduRkc6YQVloQSDSod9",
+                    "image_list": [
+                        "images/past-photos/0503閉幕式/封面照.jpg",
+                        "images/past-photos/0503閉幕式/260503黑客松@A精選-76.jpg",
+                        "images/past-photos/0503閉幕式/260503黑客松@A 合照-45.jpg",
+                        "images/past-photos/0503閉幕式/260503黑客松@A 合照-48.jpg",
+                        "images/past-photos/0503閉幕式/260503黑客松@A 合照-51.jpg",
+                        "images/past-photos/0503閉幕式/260503黑客松@A 合照-55.jpg",
+                        "images/past-photos/0503閉幕式/260503黑客松@A 合照-57.jpg",
+                        "images/past-photos/0503閉幕式/260503黑客松@A 合照-62.jpg",
+                        "images/past-photos/0503閉幕式/260503黑客松@P 閉幕式-004.jpg"
+                    ]
+                }
+            ]
         },
         "videos": {
             "title": "影音回顧",
