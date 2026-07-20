@@ -1,4 +1,3 @@
-```typescript
 export interface News {
   id: number;
   /** 發布日期 */
@@ -22,4 +21,3 @@ export enum NewsTag {
   News = 'news',
   Media = 'media',
 }
-```

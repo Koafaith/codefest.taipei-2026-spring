@@ -224,8 +224,8 @@ const calculateDistance = () => {
     if (activeTab && rightContent) {
       const tabRect = activeTab.getBoundingClientRect();
       const contentRect = rightContent.getBoundingClientRect();
-      tabToContentDistance.value = parseFloat((contentRect.left - tabRect.right).toFixed(2));
-      tabHeight.value = parseFloat(tabRect.height.toFixed(2));
+      tabToContentDistance.value = Number.parseFloat((contentRect.left - tabRect.right).toFixed(2));
+      tabHeight.value = Number.parseFloat(tabRect.height.toFixed(2));
     }
   });
 };
@@ -432,6 +432,7 @@ const newsKeyword = ref('');
               <!-- 分頁控制 -->
               <div class="flex justify-end items-center space-x-2 text-white font-px437">
                 <button
+                  type="button"
                   v-kb-focus="{
                     id: `index-video-1-32`,
                     x: 1,
@@ -448,6 +449,7 @@ const newsKeyword = ref('');
                 </button>
                 <span>&nbsp;{{ pastCurrentPage }} / {{ pastTotalPages }}&nbsp;</span>
                 <button
+                  type="button"
                   v-kb-focus="{
                     id: `index-video-2-32`,
                     x: 2,
@@ -982,8 +984,9 @@ const newsKeyword = ref('');
                   <div class="flex flex-wrap gap-4 mb-6 text-white">
                     <!-- 排序 -->
                     <div class="flex items-center">
-                      <span class="mr-2">排序：</span>
+                      <label for="news-sort" class="mr-2">排序：</label>
                       <select
+                        id="news-sort"
                         v-model="newsSort"
                         class="bg-primary-300 border border-white px-2 py-1 pr-8 appearance-none"
                       >
@@ -993,8 +996,9 @@ const newsKeyword = ref('');
                     </div>
                     <!-- 時間篩選 -->
                     <div class="flex items-center">
-                      <span class="mr-2">時間：</span>
+                      <label for="news-time-filter" class="mr-2">時間：</label>
                       <select
+                        id="news-time-filter"
                         v-model="newsTimeFilter"
                         class="bg-primary-300 border border-white px-2 py-1 pr-8 appearance-none"
                       >
@@ -1006,7 +1010,9 @@ const newsKeyword = ref('');
                     </div>
                     <!-- 關鍵字搜尋 -->
                     <div class="flex items-center flex-1">
+                      <label for="news-keyword" class="sr-only">關鍵字搜尋</label>
                       <input
+                        id="news-keyword"
                         v-model="newsKeyword"
                         type="text"
                         placeholder="搜尋關鍵字..."
