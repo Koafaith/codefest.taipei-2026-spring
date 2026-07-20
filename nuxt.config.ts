@@ -40,11 +40,7 @@ export default defineNuxtConfig({
           src: '/2026-spring/js/gtm.js',
           type: 'text/javascript',
         },
-        {
-          src: `https://www.googletagmanager.com/gtag/js?id=${process.env.NUXT_PUBLIC_GA_ID}`,
-          async: true,
-          crossorigin: 'anonymous',
-        },
+        // 移除外部 gtag/js：NUXT_PUBLIC_GA_ID 未設會載入 id=undefined，且 Google 動態 script 無法加 SRI（弱掃 Medium/Low）。GA4 追蹤由自架 gtm.js（GTM-MQCC8H3V）+ ga.js 經 dataLayer 處理。
         {
           src: '/2026-spring/js/ga.js',
           type: 'text/javascript',
