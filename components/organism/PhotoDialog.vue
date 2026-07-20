@@ -58,7 +58,7 @@ watch(
         <DialogPanel
           class="bg-white relative w-full max-w-[1147px] min-h-[684px] lg:p-10 px-4 py-10"
         >
-          <button class="absolute top-0 right-0" @click="emit('close')">
+          <button type="button" class="absolute top-0 right-0" @click="emit('close')">
             <img src="@/assets/images/icons/btn-close.svg" alt="" />
           </button>
           <!-- 標題區域 -->
@@ -117,6 +117,7 @@ watch(
                 </Swiper>
                 <!-- 自訂左按鈕 -->
                 <button
+                  type="button"
                   v-if="props.activePhoto?.image_list?.length > 1"
                   class="team-swiper-button-prev custom-nav-btn"
                 >
@@ -129,6 +130,7 @@ watch(
                 </button>
                 <!-- 自訂右按鈕 -->
                 <button
+                  type="button"
                   v-if="props.activePhoto?.image_list?.length > 1"
                   class="team-swiper-button-next custom-nav-btn"
                 >

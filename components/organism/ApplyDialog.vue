@@ -32,7 +32,7 @@ const confirmClose = () => {
         class="bg-white w-full h-full font-fusion-pixel max-w-[1024px] mx-auto flex flex-col relative"
       >
         <!-- 關閉按鈕 -->
-        <button class="absolute top-4 right-4 z-10" @click="openConfirm">
+        <button type="button" class="absolute top-4 right-4 z-10" @click="openConfirm">
           <img src="@/assets/images/icons/btn-close.svg" alt="" />
         </button>
 
@@ -62,7 +62,7 @@ const confirmClose = () => {
         >
           <div class="relative bg-white w-full max-w-sm p-6 shadow-xl">
             <!-- 關閉按鈕 -->
-            <button class="absolute top-4 right-4 z-10" @click="showConfirm = false">
+            <button type="button" class="absolute top-4 right-4 z-10" @click="showConfirm = false">
               <img src="@/assets/images/icons/btn-close.svg" alt="關閉" />
             </button>
             <!-- 標題 -->
@@ -76,12 +76,14 @@ const confirmClose = () => {
             <!-- 按鈕 -->
             <div class="flex justify-center gap-4 mt-6 font-fusion-pixel">
               <button
+                type="button"
                 class="px-4 py-2 border-2 border-primary-500 hover:bg-gray-400 text-primary-500"
                 @click="showConfirm = false"
               >
                 取消
               </button>
               <button
+                type="button"
                 class="px-4 py-2 bg-primary-500 hover:bg-primary-600 text-white"
                 @click="confirmClose"
               >

@@ -22,9 +22,12 @@ jobs:
         run: npm install
 
       - name: Inject .env for Nuxt
+        env:
+          NUXT_PUBLIC_GTM_ID: ${{ secrets.NUXT_PUBLIC_GTM_ID }}
+          NUXT_PUBLIC_GA_ID: ${{ secrets.NUXT_PUBLIC_GA_ID }}
         run: |
-          echo "NUXT_PUBLIC_GTM_ID=${{ secrets.NUXT_PUBLIC_GTM_ID }}" >> .env
-          echo "NUXT_PUBLIC_GA_ID=${{ secrets.NUXT_PUBLIC_GA_ID }}" >> .env
+          echo "NUXT_PUBLIC_GTM_ID=$NUXT_PUBLIC_GTM_ID" >> .env
+          echo "NUXT_PUBLIC_GA_ID=$NUXT_PUBLIC_GA_ID" >> .env
 
       - name: Build static site (Nuxt generate)
         run: npm run generate
